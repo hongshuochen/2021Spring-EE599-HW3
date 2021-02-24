@@ -18,7 +18,7 @@ class CPPLib {
   std::set<std::set<int>> twoSum(std::vector<int>& input, int sum);
 
   //q6
-  bool​ ​CheckValidExpression​(​const​ ​string​&​ ​a​);
+  bool​ ​CheckValidExpression​(​const​ ​std::string​&​ ​a​);
 
 };
 

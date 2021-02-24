@@ -1,17 +1,11 @@
 #include "cpplib.h"
 #include "limits"
 
-// Question 2
+// Question 3
 std::set<std::set<int>> CPPLib::twoSum(std::vector<int>& input, int sum){
 
 }
 
-// Question 3
-//one example
-SinglyLinkedList::SinglyLinkedList() {
-    //write you code
-}
-//move on for other methods
 
 // Question 4
 
@@ -39,4 +33,7 @@ SinglyLinkedList::SinglyLinkedList() {
 //q5_6 complex2 += (an float number)
 
 // Question 6
+bool​ ​CPPLib::CheckValidExpression​(​const​ ​std::string​&​ ​a​){
+
+}
 
