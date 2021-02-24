@@ -5,23 +5,87 @@
 - For non-coding quesitions, you will find **Answer** below each question. Please write your answer there.
 - For coding questions, please make sure that your code can run ```bazel run/test```. In this homework, you will need to fill up [cpplib.cc](src/lib/cpplib.cc) and tests in [tests](tests).
 - For submission, please push your answers to Github before the deadline.
-- Deadline: Monday, September 28st by 23:59 pm
-- Total: 130 points. 100 points is considered full credit.
+- Deadline: Friday, March 5th by 23:59 pm
+- Total: 120 points. 100 points is considered full credit.
 
-## Question 1 (10 Points. Easy)
+## Question 1 (20 Points. Easy)
 
-Please compare pros and cons of the following options:
+Please compare pros and cons of the following options, and also describe when each option is preferred.
 
 - Passing parameters by value
 - Passing parameters using pointers
 - Passing parameters using references
 - Passing parameters using const references
 
-Please mention when each item is preferred.
-
 Answer:
 
 ## Question 2 (20 Points. Easy)
+Part 1:
+Please write a class called Point which has int values x, y as its coordinates:
+- Write a default constructor that initializes x,y to 0, 0.
+- Write a constructor that takes only one parameter. Use that parameter to initialize x and set y to 0.
+- Write a copy constructor.
+- Write a destructor that prints “Destructor is called!”.
+
+Part 2:
+- For each of the following snippets, please write down what function will be called:
+
+Snippet 1:
+Point p1;
+
+Answer:
+
+Snippet 2:
+Point p1(5, 6);
+
+Answer:
+
+Snippet 3:
+Point p1(5, 6);
+Point p2=p1;
+
+Answer:
+
+Snippet 4:
+Assuming PrintPoint function is given as below (You don’t need to write its definition):
+void PrintPoint(Point p);
+Point p1;
+PrintPoint (p1);
+
+Answer:
+
+Snippet 5:
+Assuming PrintPoint function is given as below (You don’t need to write its definition):
+void PrintPoint(Point &p);
+Point p1;
+PrintPoint(p1);
+
+Answer:
+
+Snippet 6:
+Assuming PrintPoint function is given as below (You don’t need to write its definition):
+void PrintPoint(const Point &p);
+Point p1;
+PrintPoint(p1);
+
+Answer:
+
+Snippet 7:
+Assuming PrintPoint function is given as below (You don’t need to write its definition):
+void PrintPoint(Point *p);
+Point *ptr;
+PrintPoint(p1);
+
+Answer:
+
+Snippet 8:
+Point *ptr;
+ptr = new Point;
+PrintPoint(p1);
+
+Answer:
+
+## Question 3 (20 Points. Easy)
 
 Given a vector of integer *input*, and an integer *sum*, return a set of sets {a,b}, where a,b are in the input vector and a+b = sum, which are the numbers in *input* such that they can add up to sum. Function is defined as ```std::set<std::set<int>> twoSum(std::vector<int>& input, int sum)```
 
@@ -36,94 +100,27 @@ Given a vector of integer *input*, and an integer *sum*, return a set of sets {a
   - input = {2,3,-2,5,0}, sum = 0, output = {{2,-2}}
   - input = {1,5,4,10}, sum = 200, output = {}
 
-Write several tests using GTest for your function in [tests/q2_student_test.cc](tests/q2_student_test.cc).
+Write several tests using GTest for your function in [tests/q3_student_test.cc](tests/q3_student_test.cc).
 Please create your test cases and run the following command to verify the functionality of your program.And what's your function's **time complexity**?
 ```
-bazel test tests:q2_student_test
-```
-Please compute the time complexity of your implementation.
-
-Answer:
-
-## Question 3 (50 Points. Medium)
-
-Implement the following class for a Linked List of integer values in your [cpplib.cc](src/lib/cpplib.cc) file.
-
-```c++
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(nullptr) { }
-};
-
-class SinglyLinkedList {
-public:
-  // default constructor
-  SinglyLinkedList();
-
-  //constructor creates a cyclic or acyclic linked list based on the value of i
-  //if i is negative or greater than input size, the last item's next is nullptr
-  //else creates a linked list out of vector "input" and connects the last item's next to i(th) item in the list
-  SinglyLinkedList(vector<int> &input, int i);
-  
-  ~SinglyLinkedList(); //destructor, cleans up
-
-  bool empty();//checks if empty
-
-  int size(); //returns size
-
-  void push_back(int i);//inserts at the back
-
-  void push_front(int i);//inserts at the front
-
-  void insert_after(ListNode* p, int i);//inserts value i after p
-
-  void erase(ListNode* p);//erases node p
-
-  void pop_front();//remove the first item
-
-  void pop_back();//remove the last item
-
-  ListNode* GetBackPointer();//returns the pointer to the last item
-
-  ListNode* GetIthPointer(int i);//returns pointer to ith element
-
-  void reverse(); // reverse the linked list in-place
-
-  void print();//prints the list: ex. Empty list: { }. List with Items: {1, 2, 3}
-
-  ListNode *head_;//Pointer to the first element
-
-};
-```
-
-You can assume that the Linked List is **acyclic** except for the constructor ```SinglyLinkedList(vector<int> &input, int i);```.
-
-All functions except for print()/constructor/destructor require a GTest.
-
-Write several tests using GTest for your function in [tests/q3_student_test.cc](tests/q3_student_test.cc).
-
-Please create your test cases and run the following command to verify the functionality of your program.
-
-```c++
 bazel test tests:q3_student_test
 ```
 Please compute the time complexity of your implementation.
 
 Answer:
 
-## Question 4 (10 Points. Easy)
+## Question 4 (20 Points. Easy)
 
 Write 2 classes to practice how to use the constructor, copy constructor, copy assign operator and destructor and compare the deep copy with shallow copy.
 
 Both of the Student_shallow and Student_deep has one member integer pointer id.
 
 - Student_shallow
-  - Write a **default constructor** to allocate and initialize id to 0
+  - Write a **default constructor** to allocate and initialize id to **nullptr**
   - Write a **parameterized constructor** to initialize id
 
 - Student_deep
-  - Write a **default constructor** to allocate and initialize id to 0
+  - Write a **default constructor** to allocate and initialize id to **nullptr**
   - Write a **parameterized constructor** to initialize id
   - Write a **destructor** to print "Delete Student_deep!" and delete the integer pointer
   - Write a **copy constructor** with **deep copy**
@@ -206,9 +203,8 @@ Tasks:
   - `--complex` should decrease the real part by 1.
     - Example: `c=Complex(1,2); c++;`, *c=2+2i*
     - Example: `c=Complex(1,2); --c;`, *c=0+2i*
-5. the class will support '>' operator, which return a boolean data:
-  - if both real and imaginary part of left hand side is larger than the right hand side, the answer will be true, otherwise, the answer is false.
-    - Example: (1+2i) > (0+3i) = *false*
+5. The class will support '>' operator, which returns boolean data. To compare two complex numbers x= a + bi and y=c+dj, for x > y should return true if  SQRT(a^2 + b^2) > SQRT(c^2 + d^2) 
+Example: (1+2i) > (0+3i) = (1^2+2^2) > (0^2 + 3^2) = 5 > 9 = false.
 6. the class will support '*' operator, which multiplies a real number:
   - the function returns a Complex object, which is multiplied both the real and imaginary parts.
     - Example: `c=Complex(1,2); d=Complex(); d=c*2;`, *d=2+4i*
