@@ -22,6 +22,18 @@ class CPPLib {
 
 };
 
+//q2
+class Point{
+private:
+    int x;
+    int y;
+public:
+    Point();
+    Point(int);
+    Point(const Point&);
+    ~Point();
+};
+
 // q4
 class Student_shallow
 {
