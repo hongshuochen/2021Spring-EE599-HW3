@@ -116,11 +116,11 @@ Write 2 classes to practice how to use the constructor, copy constructor, copy a
 Both of the Student_shallow and Student_deep has one member integer pointer id.
 
 - Student_shallow
-  - Write a **default constructor** to allocate and initialize id to **nullptr**
+  - Write a **default constructor** to initialize id to **nullptr**
   - Write a **parameterized constructor** to initialize id
 
 - Student_deep
-  - Write a **default constructor** to allocate and initialize id to **nullptr**
+  - Write a **default constructor** to initialize id to **nullptr**
   - Write a **parameterized constructor** to initialize id
   - Write a **destructor** to print "Delete Student_deep!" and delete the integer pointer
   - Write a **copy constructor** with **deep copy**
@@ -149,27 +149,29 @@ public:
 Eaxmple:
 ```
 Student_shallow a;
-Student_shallow b = a;
-Student_shallow c;
-c = a;
-cout << *a.id << *b.id << *c.id << endl;
-*c.id = 1;
-cout << *a.id << *b.id << *c.id << endl;
+Student_shallow a(0);
+  Student_shallow b = a;
+  Student_shallow c;
+  c = a;
+  cout << *a.id << *b.id << *c.id << endl;
+  *c.id = 1;
+  cout << *a.id << *b.id << *c.id << endl;
 
-Student_deep a;
-Student_deep b = a;
-Student_deep c;
-c = a;
-cout << *a.id << *b.id << *c.id << endl;
-*c.id = 1;
-cout << *a.id << *b.id << *c.id << endl;
+  Student_deep d(0);
+  Student_deep e = d;
+  Student_deep f;
+  f = e;
+  cout << *d.id << *e.id << *f.id << endl;
+  *e.id = 2;
+  *f.id = 1;
+  cout << *d.id << *e.id << *f.id << endl;
 ```
 Exepcted output:
 ```
 000
 111
 000
-001
+021
 Delete Student_deep!
 Delete Student_deep!
 Delete Student_deep!
