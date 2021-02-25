@@ -146,7 +146,7 @@ public:
 };
 ```
 
-Eaxmple:
+Example:
 ```
 Student_shallow a;
 Student_shallow a(0);
@@ -166,7 +166,7 @@ cout << *d.id << *e.id << *f.id << endl;
 *f.id = 1;
 cout << *d.id << *e.id << *f.id << endl;
 ```
-Exepcted output:
+Expected output:
 ```
 000
 111
