@@ -35,7 +35,7 @@ std::set<std::set<int>> CPPLib::twoSum(std::vector<int>& input, int sum){
 //q5_6 complex2 += (an float number)
 
 // Question 6
-bool​ ​CPPLib::CheckValidExpression​(​const​ ​std::string​&​ ​a​){
+bool CPPLib::CheckValidExpression(const std::string &  a){
 
 }
 
