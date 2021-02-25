@@ -150,21 +150,21 @@ Eaxmple:
 ```
 Student_shallow a;
 Student_shallow a(0);
-  Student_shallow b = a;
-  Student_shallow c;
-  c = a;
-  cout << *a.id << *b.id << *c.id << endl;
-  *c.id = 1;
-  cout << *a.id << *b.id << *c.id << endl;
+Student_shallow b = a;
+Student_shallow c;
+c = a;
+cout << *a.id << *b.id << *c.id << endl;
+*c.id = 1;
+cout << *a.id << *b.id << *c.id << endl;
 
-  Student_deep d(0);
-  Student_deep e = d;
-  Student_deep f;
-  f = e;
-  cout << *d.id << *e.id << *f.id << endl;
-  *e.id = 2;
-  *f.id = 1;
-  cout << *d.id << *e.id << *f.id << endl;
+Student_deep d(0);
+Student_deep e = d;
+Student_deep f;
+f = e;
+cout << *d.id << *e.id << *f.id << endl;
+*e.id = 2;
+*f.id = 1;
+cout << *d.id << *e.id << *f.id << endl;
 ```
 Exepcted output:
 ```
