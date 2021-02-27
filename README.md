@@ -32,11 +32,13 @@ Part 2:
 - For each of the following snippets, please write down what function will be called:
 - In part 2 assume a constructor with 2 parameters exist, which we didn't ask you to implement.
 Snippet 1:
+```
 Point p1;
-
+```
 Answer:
-```c++
+
 Snippet 2:
+```c++
 Point p1(5, 6);
 ```
 Answer:
