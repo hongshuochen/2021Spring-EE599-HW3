@@ -160,7 +160,6 @@ public:
 
 Example:
 ```
-Student_shallow a;
 Student_shallow a(0);
 Student_shallow b = a;
 Student_shallow c;
