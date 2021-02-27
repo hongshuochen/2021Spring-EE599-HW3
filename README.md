@@ -35,54 +35,62 @@ Snippet 1:
 Point p1;
 
 Answer:
-
+```c++
 Snippet 2:
 Point p1(5, 6);
-
+```
 Answer:
 
 Snippet 3:
+```c++
 Point p1(5, 6);
 Point p2=p1;
-
+```
 Answer:
 
 Snippet 4:
 Assuming PrintPoint function is given as below (You don’t need to write its definition):
+```c++
 void PrintPoint(Point p);
 Point p1;
 PrintPoint (p1);
-
+```
 Answer:
 
 Snippet 5:
 Assuming PrintPoint function is given as below (You don’t need to write its definition):
+```c++
 void PrintPoint(Point &p);
 Point p1;
 PrintPoint(p1);
+```
 
 Answer:
 
 Snippet 6:
 Assuming PrintPoint function is given as below (You don’t need to write its definition):
+```c++
 void PrintPoint(const Point &p);
 Point p1;
 PrintPoint(p1);
-
+```
 Answer:
 
 Snippet 7:
 Assuming PrintPoint function is given as below (You don’t need to write its definition):
+```c++
 void PrintPoint(Point *p);
 Point *ptr;
 PrintPoint(ptr);
-
+```
 Answer:
 
 Snippet 8:
+```c++
 Point *ptr;
 ptr = new Point;
 PrintPoint(ptr);
+```
 
 Answer:
 
