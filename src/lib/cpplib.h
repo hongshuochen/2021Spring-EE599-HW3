@@ -16,12 +16,9 @@ class CPPLib {
  public:
   //q3
   std::set<std::set<int>> twoSum(std::vector<int>& input, int sum);
-
   //q6
-  bool​ ​CheckValidExpression​(​const​ ​std::string​&​ ​a​);
-
+  bool CheckValidExpression(const std::string& a);
 };
-
 // q4
 class Student_shallow
 {
