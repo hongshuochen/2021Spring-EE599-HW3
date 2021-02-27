@@ -26,10 +26,11 @@ Please write a class called Point which has int values x, y as its coordinates:
 - Write a constructor that takes only one parameter. Use that parameter to initialize x and set y to 0.
 - Write a copy constructor.
 - Write a destructor that prints “Destructor is called!”.
+- For class Point, you can either set x, y to be public or if you make them private, write GetX() and GetY() functions to return the values. This way you can use their values in your unit tests.
 
 Part 2:
 - For each of the following snippets, please write down what function will be called:
-
+- In part 2 assume a constructor with 2 parameters exist, which we didn't ask you to implement.
 Snippet 1:
 Point p1;
 
