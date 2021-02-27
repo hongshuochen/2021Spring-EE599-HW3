@@ -31,6 +31,7 @@ Please write a class called Point which has int values x, y as its coordinates:
 Part 2:
 - For each of the following snippets, please write down what function will be called:
 - In part 2 assume a constructor with 2 parameters exist, which we didn't ask you to implement.
+
 Snippet 1:
 ```
 Point p1;
