@@ -74,14 +74,14 @@ Snippet 7:
 Assuming PrintPoint function is given as below (You don’t need to write its definition):
 void PrintPoint(Point *p);
 Point *ptr;
-PrintPoint(p1);
+PrintPoint(ptr);
 
 Answer:
 
 Snippet 8:
 Point *ptr;
 ptr = new Point;
-PrintPoint(p1);
+PrintPoint(ptr);
 
 Answer:
 
