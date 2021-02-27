@@ -89,7 +89,9 @@ PrintPoint(ptr);
 Answer:
 
 Snippet 8:
+Assuming PrintPoint function is given as below (You don’t need to write its definition):
 ```c++
+void PrintPoint(Point *p);
 Point *ptr;
 ptr = new Point;
 PrintPoint(ptr);
