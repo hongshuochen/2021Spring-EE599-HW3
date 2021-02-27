@@ -26,62 +26,76 @@ Please write a class called Point which has int values x, y as its coordinates:
 - Write a constructor that takes only one parameter. Use that parameter to initialize x and set y to 0.
 - Write a copy constructor.
 - Write a destructor that prints “Destructor is called!”.
+- For class Point, you can either set x, y to be public or if you make them private, write GetX() and GetY() functions to return the values. This way you can use their values in your unit tests.
 
 Part 2:
 - For each of the following snippets, please write down what function will be called:
+- In part 2 assume a constructor with 2 parameters exist, which we didn't ask you to implement.
 
 Snippet 1:
+```
 Point p1;
-
+```
 Answer:
 
 Snippet 2:
+```c++
 Point p1(5, 6);
-
+```
 Answer:
 
 Snippet 3:
+```c++
 Point p1(5, 6);
 Point p2=p1;
-
+```
 Answer:
 
 Snippet 4:
 Assuming PrintPoint function is given as below (You don’t need to write its definition):
+```c++
 void PrintPoint(Point p);
 Point p1;
 PrintPoint (p1);
-
+```
 Answer:
 
 Snippet 5:
 Assuming PrintPoint function is given as below (You don’t need to write its definition):
+```c++
 void PrintPoint(Point &p);
 Point p1;
 PrintPoint(p1);
+```
 
 Answer:
 
 Snippet 6:
 Assuming PrintPoint function is given as below (You don’t need to write its definition):
+```c++
 void PrintPoint(const Point &p);
 Point p1;
 PrintPoint(p1);
-
+```
 Answer:
 
 Snippet 7:
 Assuming PrintPoint function is given as below (You don’t need to write its definition):
+```c++
 void PrintPoint(Point *p);
 Point *ptr;
-PrintPoint(p1);
-
+PrintPoint(ptr);
+```
 Answer:
 
 Snippet 8:
+Assuming PrintPoint function is given as below (You don’t need to write its definition):
+```c++
+void PrintPoint(Point *p);
 Point *ptr;
 ptr = new Point;
-PrintPoint(p1);
+PrintPoint(ptr);
+```
 
 Answer:
 
@@ -116,11 +130,11 @@ Write 2 classes to practice how to use the constructor, copy constructor, copy a
 Both of the Student_shallow and Student_deep has one member integer pointer id.
 
 - Student_shallow
-  - Write a **default constructor** to allocate and initialize id to **nullptr**
+  - Write a **default constructor** to initialize id to **nullptr**
   - Write a **parameterized constructor** to initialize id
 
 - Student_deep
-  - Write a **default constructor** to allocate and initialize id to **nullptr**
+  - Write a **default constructor** to initialize id to **nullptr**
   - Write a **parameterized constructor** to initialize id
   - Write a **destructor** to print "Delete Student_deep!" and delete the integer pointer
   - Write a **copy constructor** with **deep copy**
@@ -146,9 +160,10 @@ public:
 };
 ```
 
-Eaxmple:
+Example:
 ```
 Student_shallow a;
+Student_shallow a(0);
 Student_shallow b = a;
 Student_shallow c;
 c = a;
@@ -156,20 +171,21 @@ cout << *a.id << *b.id << *c.id << endl;
 *c.id = 1;
 cout << *a.id << *b.id << *c.id << endl;
 
-Student_deep a;
-Student_deep b = a;
-Student_deep c;
-c = a;
-cout << *a.id << *b.id << *c.id << endl;
-*c.id = 1;
-cout << *a.id << *b.id << *c.id << endl;
+Student_deep d(0);
+Student_deep e = d;
+Student_deep f;
+f = e;
+cout << *d.id << *e.id << *f.id << endl;
+*e.id = 2;
+*f.id = 1;
+cout << *d.id << *e.id << *f.id << endl;
 ```
-Exepcted output:
+Expected output:
 ```
 000
 111
 000
-001
+021
 Delete Student_deep!
 Delete Student_deep!
 Delete Student_deep!
